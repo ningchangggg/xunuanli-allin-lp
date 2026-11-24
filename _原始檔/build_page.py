@@ -1,4 +1,5 @@
-"""買三送一大禮包（我全都要）落地頁 v1，2026-11-25。
+"""買三送一大禮包（我全都要）落地頁 v2，2026-11-25。
+v2：片頭副標「這四位，是你一整年的最佳配角」改「這四幕，是你一整天的分鏡」（阿寧）。
 阿寧：「還要買三送一大禮包，另外設計一個落地頁。他等於煦暖曆所有商品都買了，這要是完全不同的設計風格，
 要給他『買這四個產品』可以在他生活扮演什麼角色。」
 
@@ -192,7 +193,7 @@ def build():
 <p class="en amber pre">Xunuanli Pictures Presents</p>
 <p class="kick">煦暖曆全系列，一次到齊</p>
 <h1>2027，<br>由你主演。</h1>
-<p class="sub">這四位，是你一整年的<span class="hl">最佳配角</span></p>
+<p class="sub">這四幕，是你一整天的<span class="hl">分鏡</span></p>
 <div class="strip"><div class="holes t"></div><div class="holes b"></div>
 <div class="frames"><div style="background-image:url(img/o1.jpg)"></div><div style="background-image:url(img/o2.jpg)"></div><div style="background-image:url(img/o3.jpg)"></div><div style="background-image:url(img/o4.jpg)"></div></div></div>
 <div class="names"><div><span class="en amber">01</span><b>實體日曆</b></div><div><span class="en amber">02</span><b>手機日曆</b></div><div><span class="en amber">03</span><b>手帳</b></div><div><span class="en amber">04</span><b>語錄卡</b></div></div>

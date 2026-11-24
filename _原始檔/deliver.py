@@ -2,7 +2,7 @@
 import os, base64, io, shutil
 from PIL import Image
 D = os.path.dirname(os.path.abspath(__file__)); O = os.path.dirname(D)
-V = 'v1'; BASE = f'11.25_買三送一大禮包_落地頁_{V}'
+V = 'v2'; BASE = f'11.25_買三送一大禮包_落地頁_{V}'
 SEC = [('s01', '01_片頭_2027由你主演', 0), ('s02', '02_演員表', 0), ('s03', '03_聖誕節前到貨_跑馬燈_GIF', 1),
        ('s04', '04_2027通告單_一天四場戲', 0), ('s05', '05_SCENE01_實體日曆_每天的開場白_GIF', 1),
        ('s06', '06_SCENE02_手機日曆_口袋裡的老朋友_GIF', 1), ('s07', '07_SCENE03_手帳_祕書兼樹洞_GIF', 1),
@@ -37,9 +37,10 @@ open(f'{O}/{BASE}_整頁預覽_單檔整合.html', 'w').write(head + ''.join(par
 ims = []
 for sid, n, g in names:
     if g:
-        fs = sorted(os.listdir(f'{D}/gif/secframes/{sid}'))
+        SF = os.environ.get('SECFRAMES', f'{D}/gif/secframes')
+        fs = sorted(os.listdir(f'{SF}/{sid}'))
         pick = {'s07': fs[-1], 's03': fs[0]}.get(sid, fs[len(fs) * 2 // 3])
-        ims.append(Image.open(f'{D}/gif/secframes/{sid}/{pick}').convert('RGB'))
+        ims.append(Image.open(f'{SF}/{sid}/{pick}').convert('RGB'))
     else:
         ims.append(Image.open(f'{O}/說明圖_1080寬/{n}').convert('RGB'))
 H = sum(i.height for i in ims); st = Image.new('RGB', (1080, H)); y = 0
