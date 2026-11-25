@@ -187,12 +187,12 @@ def build():
 <div style="position:absolute;left:288px;top:286px;width:112px;height:230px;overflow:hidden;transform:rotate(6deg)"><img class="st" src="img/h_ph.png" style="position:absolute;left:5px;top:6px;width:102px"></div>
 {tape('t4', 'left:316px;top:278px;width:62px;transform:rotate(12deg)')}
 <span class="slip" style="left:282px;top:428px;transform:rotate(5deg);padding:8px 18px">隨身小跟班</span>
-<span class="slip" style="left:206px;top:470px;transform:rotate(-3deg)">生活小祕書</span>
+<span class="slip" style="left:180px;top:396px;transform:rotate(-3deg)">生活小祕書</span>
 {heart(26, 'left:270px;top:574px;transform:rotate(12deg)')}{spark(18, 'left:110px;top:520px', B)}
 <p class="tail">一份大禮包，陪你過好每一天</p>
 </section>'''
 
-    cards = [(Y, 'h_cal.png', 'height:126px;top:16px', '實體日曆', '早安小播報員', '每天早上，替你播報<br>今天的那一句話'),
+    cards = [(Y, 'h_cal.png', 'height:126px;top:16px', '實體日曆', '早安小播報員', '每天早上，替你播報<br>今天的語錄'),
              (B, 'h_ph.png', 'width:84px;top:22px', '手機日曆', '隨身小跟班', '走到哪跟到哪，<br>解鎖手機就見面'),
              (G, 'h_pl.png', 'height:128px;top:14px', '手帳', '生活小祕書', '幫你記行程，<br>也聽你說心事'),
              (L, 'h_qt.png', 'width:104px;top:30px', '語錄卡', '暖心小信差', '把說不出口的話，<br>替你送到對方手上')]
