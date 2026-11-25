@@ -1,6 +1,6 @@
 {%- comment -%}
   nl-allin：大禮包商品頁（new2027-我全都要大禮包）的購買區，2026-11-25。
-  這個商品本身不出貨（頁面上沒有它自己的加入購物車），客人在這裡選好四樣，按鈕把四件真的商品帶 __mpb_bundle_id 加進購物車。
+  這個商品本身不出貨也不能單獨買（庫存 0、不可超賣，頁面上沒有它自己的加入購物車；售罄標籤用 CSS 換成聖誕價），客人在這裡選好四樣，按鈕把四件真的商品帶 __mpb_bundle_id 加進購物車。
   組合沿用全站「我全都要」五組（日曆五選一＋原手帳＋原語錄卡＋手機日曆組合贈品，$2,155，已發佈），代號照「煦暖曆,幹話,鮮花,旅行,法華」順序；
   購物車標題對照（main-cart-items）本來就有這五組，不用另外加。
   用法：product.new-lp-allin 範本的 main 區塊放 {%- render 'nl-allin', product: product -%}，並拿掉 variant_picker／quantity_selector／buy_buttons。
@@ -19,6 +19,8 @@
 .product__info-container .price--on-sale .price__sale{display:inline-flex;flex-direction:row-reverse;align-items:baseline;gap:.8rem}
 .product__info-container .price--on-sale .price-item--sale{color:#BC443C;font-size:2.6rem}
 .product__info-container .mpb-offer--volume_discount{display:none!important}
+.product__info-container .price__badge-sold-out{display:none!important}
+.product__info-container .price--sold-out.price--on-sale .price__badge-sale{display:inline-block!important}
 #nl-allin{margin:1.4rem 0 .4rem;border:1.5px solid rgb(var(--color-foreground));border-radius:12px;overflow:hidden;background:#fff}
 #nl-allin .na-pic{position:relative}
 #nl-allin .na-img{aspect-ratio:4/3;width:100%;height:auto;object-fit:cover;display:block}
