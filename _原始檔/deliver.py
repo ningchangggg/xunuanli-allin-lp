@@ -1,13 +1,13 @@
-"""把 sec/*.png 與 gif/enc 整理成交付資料夾（買三送一大禮包 v1）。原始檔就放在交付資料夾的 _原始檔 裡，不另外複製。"""
+"""把 sec/*.png 與 gif/enc 整理成交付資料夾（買三送一大禮包 v3 文青可愛風）。原始檔就放在交付資料夾的 _原始檔 裡，不另外複製。"""
 import os, base64, io, shutil
 from PIL import Image
 D = os.path.dirname(os.path.abspath(__file__)); O = os.path.dirname(D)
-V = 'v2'; BASE = f'11.25_買三送一大禮包_落地頁_{V}'
-SEC = [('s01', '01_片頭_2027由你主演', 0), ('s02', '02_演員表', 0), ('s03', '03_聖誕節前到貨_跑馬燈_GIF', 1),
-       ('s04', '04_2027通告單_一天四場戲', 0), ('s05', '05_SCENE01_實體日曆_每天的開場白_GIF', 1),
-       ('s06', '06_SCENE02_手機日曆_口袋裡的老朋友_GIF', 1), ('s07', '07_SCENE03_手帳_祕書兼樹洞_GIF', 1),
-       ('s08', '08_SCENE04_語錄卡_替你說出口的人_GIF', 1), ('s09', '09_選角_四個角色的款式', 0),
-       ('s10', '10_片尾彩蛋_拆成四份心意', 0), ('s11', '11_收尾_2027開拍', 0)]
+V = 'v3'; BASE = f'11.25_買三送一大禮包_落地頁_{V}'
+SEC = [('s01', '01_封面_我的2027生活小夥伴', 0), ('s02', '02_認識四個生活小夥伴', 0), ('s03', '03_聖誕節前到貨_禮物緞帶_GIF', 1),
+       ('s04', '04_跟著小夥伴過完一整天', 0), ('s05', '05_第1幕_早安小播報員_實體日曆_GIF', 1),
+       ('s06', '06_第2幕_隨身小跟班_手機日曆_GIF', 1), ('s07', '07_第3幕_生活小祕書_手帳_GIF', 1),
+       ('s08', '08_第4幕_暖心小信差_語錄卡_GIF', 1), ('s09', '09_幫小夥伴挑衣服_款式', 0),
+       ('s10', '10_分給喜歡的人', 0), ('s11', '11_收尾_晚安明天見', 0)]
 for sub in ['說明圖_1080寬', '動圖_MP4備用']:
     shutil.rmtree(f'{O}/{sub}', ignore_errors=True); os.makedirs(f'{O}/{sub}')
 names = []
@@ -19,8 +19,8 @@ for sid, nm, g in SEC:
     else:
         Image.open(f'{D}/sec/{sid}.png').convert('RGB').save(f'{O}/說明圖_1080寬/{nm}.jpg', quality=90)
         names.append((sid, nm + '.jpg', g))
-title = f'買三送一大禮包落地頁 {V}'
-head = f'<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><style>body{{margin:0;background:#888}}main{{max-width:432px;margin:0 auto;background:#17120E}}img,video{{display:block;width:100%}}</style><main>'
+title = f'買三送一大禮包落地頁 {V} 文青可愛風'
+head = f'<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><style>body{{margin:0;background:#888}}main{{max-width:432px;margin:0 auto;background:#FBF6EC}}img,video{{display:block;width:100%}}</style><main>'
 dyn = head + '\n'.join(f'<img src="說明圖_1080寬/{n}">' for _, n, _ in names) + '</main>'
 open(f'{O}/{BASE}_整頁預覽_動態.html', 'w').write(dyn)
 open(f'{O}/index.html', 'w').write(dyn)
